@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Radiation Dosage Tracking System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+
+  </head>
+  <style>
+		p1 {
+		    display: block;
+ 		    margin-left: 13cm;
+   		}
+		p2 {
+		    display: block;
+ 		    margin-left: 7.1cm;
+			margin-right: 2 cm;
+			font-size:16px;
+   		}
+   </style>
+
+  <body>
+<?php
+session_start();
+$user = $_SESSION['user'];
+  if($_SESSION['loggedin'] != TRUE){
+header("Location:index.html");
+}
+?>
+
+<p1>
+<h1><b>Welcome to Radiation Dosage Tracking System</b></h1>
+</p1>
+
+<p2>
+<div class="container">
+<p>This page gives a brief overview of radiation dosage tracking system. The main purpose of this application is to determine how the dosage amount given by physician varies from 
+one to another even though same examination is conducted. This in turn will help the physicians to understand what factors contribute to increase/decrease in
+dosage amount for patients and how they can control this in future if possible. The application has got 10 important functionalities and each functionality
+provides appropriate information. Please take a look at the following bulletins for more information.</p>
+<br>
+<li>
+<b>PHYSICIANS INFORMATION</b>
+</li>
+<p>The link to physicians information page will give complete information about physicians available in database. The information includes physician
+name, experience, physician ID, and, operation name.</p>
+<br>
+<li>
+<b>PATIENTS INFORMATION</b>
+</li>
+<p>The link to patients information page will give complete information about patients available in database. The information includes patients name,
+height, weight, patient ID, operation name, fluroscopy time, and, DAP.</p>
+<br>
+<li>
+<b>PHYSICIAN AND OPERATIONS INFORMATION</b>
+</li>
+<p>The link to physician and operations information page will give information about operations performed by physicians over selected period of time.</p>
+<br>
+<li>
+<b>OPERATIONS INFORMATION</b> 
+</li> 
+<p>The link to operations information page will give complete information about operation including physician name,dosage,fluroscopy time,and,so on.</p>
+<br>
+<li>
+<b>AVERAGE DOSAGE FOR OPERATIONS</b>
+</li>
+<P>The link to average dosage for operations page will give information about average dosage amount for the selected operation.</p>
+<br>
+<li>
+<b>AVERAGE DOSAGE FOR PHYSICIANS</b>
+</li>
+<p>The link to average dosage for physicians page will give information about average dosage amount available for the selected physician.</p>
+<br>
+<li>
+<b>PHYSICIANS AND OPERATIONS STATISTICAL INFORMATION</b>
+</li>
+<p>The link to physicians and operations statistical information page will give a graphical representation of average dosage amount given by selected doctors and 
+their corresponding information.</p>
+<br>
+<li>
+<b>INSERTION OF PATIENTS INFORMATION</b>
+</li>
+<p>The link to insertion of patients information page will allow admin to insert patients information into the database.</p>
+<br>
+<li>
+<b>INSERTION OF PHYSICIANS INFORMATION</b>
+</li>
+<p>The link to insertion of physicians information page will allow admin to insert physicians information into the database.</p>
+<br>
+<li>
+<b>INSERTION OF OPERATIONS INFORMATION</b>
+</li>
+<p>The link to insertion of operations information page will allow admin to insert operations performed by different physician along with 
+patients information into the database.</p>
+
+
+</div>
+</p2>
+
+
+
+</center>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Radiation Dosage Tracking System</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+		  			<li><a href="logout.php">LOG OUT</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">OVERVIEW <span class="sr-only">RADIATION DOSAGE TRACKING SYSTEM</span></a></li>
+            <li><a href="physicians.php">PHYSICIANS INFORMATION</a></li>
+            <li><a href="patients.php">PATIENTS INFORMATION</a></li>
+            <li><a href="pno.php">PHYSICIAN AND OPERATIONS INFORMATION</a></li>
+            <li><a href="ope.php">OPERATIONS INFORMATION</a></li>
+            <li><a href="avgop.html">AVERAGE DOSAGE FOR OPERATIONS</a></li>
+            <li><a href="avgph.php">AVERAGE DOSAGE FOR PHYSICIANS</a></li>
+            <li><a href="time.php">PHYSICIANS AND OPERATIONS STATISTICAL INFORMATION</a></li>
+			<li><a href="patientinsert.php">INSERTION OF PATIENTS INFORMATION</a></li>
+            <li><a href="physicianinsert.php">INSERTION OF PHYSICIANS INFORMATION</a></li>
+            <li><a href="generalinsert.php">INSERTION OF OPERATIONS INFORMATION</a></li> 
+
+          </ul> 
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+
+
